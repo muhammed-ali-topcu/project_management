@@ -14,7 +14,9 @@
             <textarea class="form-control" name="description" id="description">{{ old('description') }}</textarea>
         </div>
         <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-primary" >
+            <input type="submit" value="save project" class="btn btn-primary" >
         </div>
     </form>
+
+
 @endsection

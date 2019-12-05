@@ -45,6 +45,7 @@ class ProjectPolicy
     public function create(User $user)
     {
         //
+        return auth()->user();
     }
 
     /**

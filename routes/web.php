@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('projects', 'ProjectController');
-
+Route::resource('task', 'TaskController');
+Route::post('/projects/{project}/tasks', 'ProjectController@task_store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

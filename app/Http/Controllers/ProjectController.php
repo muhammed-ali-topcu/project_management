@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Task;
 use Dotenv\Validator;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
@@ -11,8 +12,9 @@ use Illuminate\Auth;
 class ProjectController extends Controller
 {
 
-    public function __construct(){
-       // $this->authorizeResource(Project::class,'project');
+    public function __construct()
+    {
+         $this->authorizeResource(Project::class,'project');
     }
 
     /**
@@ -23,7 +25,7 @@ class ProjectController extends Controller
     public function index()
     {
         //
-        if(! auth()->user()) return back();
+        if (!auth()->user()) return back();
         $user_id = auth()->user()->id;
         $projects = Project::where('owner_id', $user_id)->get();
         $data = [];
@@ -58,6 +60,7 @@ class ProjectController extends Controller
         $project->fill($validated);
         $project->owner_id = auth()->user()->id;
         $project->save();
+
         return redirect()->action('ProjectController@index');
     }
 
@@ -70,7 +73,7 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         //
-        $this->authorize('update',$project);
+        $this->authorize('update', $project);
         return view('projects.show', compact('project'));
     }
 
@@ -83,8 +86,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         //
-        $user=auth()->user();
-        if (! $user->can('update',$project)) abort(403);
+        $user = auth()->user();
+        if (!$user->can('update', $project)) abort(403);
         return view('projects.edit', compact('project'));
     }
 
@@ -113,7 +116,11 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         //
+        foreach ($project->tasks as $task)
+            $task->delete();
         $project->delete();
+
+
         return redirect()->action('ProjectController@index');
     }
 
@@ -126,4 +133,15 @@ class ProjectController extends Controller
         ]);
         return $validated;
     }
+    public function task_store(Request $request, Project $project)
+    {
+        $task = new Task;
+        $task->title = $request->input('task_title');
+        $task->completed = $request->input('task_completed') == 'on';
+        $task->last_date = $request->input('task_last_date');
+        $project->add_task($task);
+        return back();
+    }
+
+
 }
