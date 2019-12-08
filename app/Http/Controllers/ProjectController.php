@@ -8,6 +8,7 @@ use Dotenv\Validator;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 use Illuminate\Auth;
+use App\Http\Requests\StoreProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -27,7 +28,7 @@ class ProjectController extends Controller
         //
         if (!auth()->user()) return back();
         $user_id = auth()->user()->id;
-        $projects = Project::where('owner_id', $user_id)->get();
+        $projects = Project::where('owner_id', $user_id)->paginate(15);
         $data = [];
         $data['projects'] = $projects;
 
@@ -51,11 +52,12 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+
+
+     public function store(StoreProjectRequest $request)
     {
         //
-
-        $validated = $this->check_validation($request);
+        $validated = $request->validated();//usning Form Requests
         $project = new Project;
         $project->fill($validated);
         $project->owner_id = auth()->user()->id;
@@ -98,10 +100,11 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(StoreProjectRequest $request, Project $project)
     {
         //
-        $validated = $this->check_validation($request);
+      //  $validated = $this->check_validation($request); clasic validation
+        $validated = $request->validated();
         $project->fill($validated);
         $project->save();
         return redirect()->action('ProjectController@index');
@@ -140,7 +143,7 @@ class ProjectController extends Controller
         $task->completed = $request->input('task_completed') == 'on';
         $task->last_date = $request->input('task_last_date');
         $project->add_task($task);
-        return back();
+        return back();// redirect back
     }
 
 
