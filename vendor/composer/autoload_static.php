@@ -453,6 +453,8 @@ class ComposerStaticInit39ff42af7ddd47656423916f6ec30f81
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Providers\\TelescopeServiceProvider' => __DIR__ . '/../..' . '/app/Providers/TelescopeServiceProvider.php',
+        'App\\Tag' => __DIR__ . '/../..' . '/app/Tag.php',
+        'App\\Taggable' => __DIR__ . '/../..' . '/app/Taggable.php',
         'App\\Task' => __DIR__ . '/../..' . '/app/Task.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\Video' => __DIR__ . '/../..' . '/app/Video.php',

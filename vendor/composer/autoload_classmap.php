@@ -37,6 +37,8 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Providers\\TelescopeServiceProvider' => $baseDir . '/app/Providers/TelescopeServiceProvider.php',
+    'App\\Tag' => $baseDir . '/app/Tag.php',
+    'App\\Taggable' => $baseDir . '/app/Taggable.php',
     'App\\Task' => $baseDir . '/app/Task.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\Video' => $baseDir . '/app/Video.php',
