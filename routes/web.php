@@ -21,3 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/locale',function(){
+    App::setlocale('en');
+    return __('text.welcome',['name'=>'MuhammedAli']);
+});
