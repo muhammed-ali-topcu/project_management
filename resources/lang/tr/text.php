@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'welcome'=>':name, Hoşgeldiniz!'
+    'welcome'=>':name, Hoşgeldiniz!',
+    'name'=>'Adı',
+    'description'=>'Açıklama'
+
 ];

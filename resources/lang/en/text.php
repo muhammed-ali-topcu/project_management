@@ -1,6 +1,7 @@
 <?php
 
 return [
-'welcome'=>'You are welcome :name'
+'welcome'=>'You are welcome :name',
+'name'=>'Name'
 
 ];
