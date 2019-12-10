@@ -29,10 +29,11 @@ class StoreProjectRequest extends FormRequest
             'description'=>'required|min:10'
         ];
     }
-    public function messages()
-    {
-        return [
-            'required'=>':attribute alanı zorunludur!'
-        ];
-    }
+    // public function messages()
+    // {
+
+    //     return [
+    //         'required'=>':attribute alanı zorunludur!'
+    //     ];
+    // }
 }

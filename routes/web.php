@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\DatatablesController;
+use App\Http\Controllers\HomeController;
 use App\UuidTest;
 use Webpatser\Uuid\Uuid;
 
@@ -41,3 +43,8 @@ dd($uuid->time);
 
     return $uuid;
 });
+Route::get('/datatables/','DatatablesController@index')->name('datatables');
+Route::get('/datatables/data','DatatablesController@data')->name('datatables.data');
+Route::get('/users','HomeController@getUsers')->name('getUsers');
+Route::get('/datatables/projects','DatatablesController@projects');
+Route::get('/datatables/getProjects','DatatablesController@getProjects')->name('getProjects');

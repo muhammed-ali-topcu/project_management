@@ -2,6 +2,7 @@
 
 return [
 'welcome'=>'You are welcome :name',
-'name'=>'Name'
+'name'=>'Name',
+'description'=>'Description'
 
 ];
