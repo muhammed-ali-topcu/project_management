@@ -3605,6 +3605,81 @@
         "homepage": "https://github.com/sebastianbergmann/version"
     },
     {
+        "name": "spatie/laravel-translatable",
+        "version": "4.2.1",
+        "version_normalized": "4.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/spatie/laravel-translatable.git",
+            "reference": "3a07be9e1e3cc9566c6d7274b613552d5cbf4b1a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/spatie/laravel-translatable/zipball/3a07be9e1e3cc9566c6d7274b613552d5cbf4b1a",
+            "reference": "3a07be9e1e3cc9566c6d7274b613552d5cbf4b1a",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/database": "~5.8.0|^6.0",
+            "illuminate/support": "~5.8.0|^6.0",
+            "php": "^7.2"
+        },
+        "require-dev": {
+            "mockery/mockery": "^1.0",
+            "orchestra/testbench": "~3.8.0|^4.0",
+            "phpunit/phpunit": "^8.0"
+        },
+        "time": "2019-10-03T11:05:01+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Spatie\\Translatable\\TranslatableServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Spatie\\Translatable\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Freek Van der Herten",
+                "email": "freek@spatie.be",
+                "homepage": "https://spatie.be",
+                "role": "Developer"
+            },
+            {
+                "name": "Sebastian De Deyne",
+                "email": "sebastian@spatie.be",
+                "homepage": "https://spatie.be",
+                "role": "Developer"
+            },
+            {
+                "name": "Mohamed Said",
+                "email": "theMohamedSaid@gmail.com",
+                "role": "Original idea"
+            }
+        ],
+        "description": "A trait to make an Eloquent model hold translations",
+        "homepage": "https://github.com/spatie/laravel-translatable",
+        "keywords": [
+            "eloquent",
+            "i8n",
+            "laravel-translatable",
+            "model",
+            "multilingual",
+            "spatie",
+            "translate"
+        ]
+    },
+    {
         "name": "swiftmailer/swiftmailer",
         "version": "v6.2.3",
         "version_normalized": "6.2.3.0",

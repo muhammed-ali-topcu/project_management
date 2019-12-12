@@ -48,3 +48,5 @@ Route::get('/datatables/data','DatatablesController@data')->name('datatables.dat
 Route::get('/users','HomeController@getUsers')->name('getUsers');
 Route::get('/datatables/projects','DatatablesController@projects');
 Route::get('/datatables/getProjects','DatatablesController@getProjects')->name('getProjects');
+Route::resource('translatable', 'TestTranslatableController');
+
